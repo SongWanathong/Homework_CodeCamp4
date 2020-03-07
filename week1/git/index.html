@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $.ajax({ "url": "https://reqres.in/api/users", "method": "GET" }).done(
+            function (snap) {
+                let stable = $("#table1")
+
+                for (let i = 0; i < snap.data.length; i++) {
+                    console.log(snap.data[i])
+                    stable.append(
+                        '<tr><td>' + snap.data[i].id + '</td>'
+                        + '<td>' + snap.data[i].email + '</td>'
+                        + '<td>' + snap.data[i].first_name + '</td>'
+                        + '<td>' + snap.data[i].last_name + '</td>'
+                        + `<td><img src=" ${snap.data[i].avatar}"</img></td></tr>`
+                    )} } )
+    </script>
+</head>
+
+<body>
+    <img src="" alt="">
+
+    <h1>Song Wanathong</h1>
+    <h2>I am deverloper</h2>
+    <div class="container">
+        <table class="table table-dark" id="table1">
+
+            <tr>
+                <th>id</th>
+                <th>Email</th>
+
+                <th>First</th>
+
+                <th>Last</th>
+
+                <th>Avatar</th>
+            </tr>
+
+
+
+        </table>
+    </div>
+</body>
+
+</html>

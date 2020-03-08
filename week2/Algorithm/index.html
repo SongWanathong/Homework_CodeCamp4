@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        div>div {
+            margin-top: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div> //1. รับ input เป็นตัวเลขจำนวนเต็ม a และ b จากนั้นให้ output ผลรวมของตัวเลขทั้ง 2 จำนวนออกทางจอภาพ </div>
+        <button onclick="no1()">click</button> <label id=1></label>
+    </div>
+
+    <div>
+        <div>2// ให้นักเรียนเขียนโปรแกรมตัดเกรดเพื่อช่วยงานทะเบียนวัดผลของโรงเรียนแห่งนี้ <br>
+
+            ข้อมูลนำเข้า<br>
+            บรรทัดแรก จำนวนเต็มบวก a (0 <= a <=30) เป็นคะแนนเก็บของนักเรียน<br>
+            บรรทัดที่สอง จำนวนเต็มบวก b (0 <=b <=30)เป็นคะแนนสอบกลางภาคของนักเรียน <br>
+            บรรทัดที่สาม จำนวนเต็มบวก c (0 <=c <=40) เป็นคะแนนสอบปลายภาคของนักเรียน </div>
+             <button onclick="no2()">click</button> <label id=2></label>
+        </div>
+
+        <script>
+            //1. รับ input เป็นตัวเลขจำนวนเต็ม a และ b จากนั้นให้ output ผลรวมของตัวเลขทั้ง 2 จำนวนออกทางจอภาพ
+            function no1() {
+
+                let a = parseInt(prompt())
+                let b = parseInt(prompt())
+                $("#1").html(a + b);
+            }
+            function no2() {
+                let a = parseInt(prompt('คะแนนเก็บของนักเรียน'))
+                let b = parseInt(prompt('คะแนนสอบกลางภาคของนักเรียน'))
+                let c = parseInt(prompt('คะแนนสอบปลายภาคของนักเรียน'))
+                const i=a+b+c
+
+                (i>=80) ? "a"
+
+
+            }
+            function no3() {
+
+
+            }
+            function no4() {
+
+
+            }
+            function no5() {
+
+
+            }
+            function no6() {
+
+
+            }
+            function no7() {
+
+
+            }
+            function no8() {
+
+
+            }
+            function no9() {
+
+
+            }
+            function no10() {
+
+
+            }
+
+
+
+
+        </script>
+
+
+</body>
+
+</html>

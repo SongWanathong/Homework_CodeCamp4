@@ -12,10 +12,11 @@
             margin-top: 20px;
 
         }
-        label{
+
+        label {
             border-color: red;
             border-style: solid;
-          
+
         }
     </style>
 </head>
@@ -31,17 +32,35 @@
 
             ข้อมูลนำเข้า<br>
             บรรทัดแรก จำนวนเต็มบวก a (0 <= a <=30) เป็นคะแนนเก็บของนักเรียน<br>
-            บรรทัดที่สอง จำนวนเต็มบวก b (0 <=b <=30)เป็นคะแนนสอบกลางภาคของนักเรียน <br>
-            บรรทัดที่สาม จำนวนเต็มบวก c (0 <=c <=40) เป็นคะแนนสอบปลายภาคของนักเรียน </div>
-             <button onclick="no2()">click</button> <label id=2></label>
+                บรรทัดที่สอง จำนวนเต็มบวก b (0 <=b <=30)เป็นคะแนนสอบกลางภาคของนักเรียน <br>
+                    บรรทัดที่สาม จำนวนเต็มบวก c (0 <=c <=40) เป็นคะแนนสอบปลายภาคของนักเรียน </div>
+                        <button onclick="no2()">click</button> <label id=2></label>
         </div>
 
+        <div>
+            3. จงหาค่าน้อยที่สุด และค่ามากที่สุด จากข้อมูลที่กำหนดให้ และแสดงผลออกทางจอภาพ input 5 1 2 3 4 5
+            <button onclick="no3()">click</button> <label id=3></label>
+
+        </div>
+
+
+        <div>
+            4. ให้นักเรียนตรวจสอบว่า สายอักขระที่โจทย์กำหนดให้นี้ เป็นตัวอักษรพิมพ์เล็กทั้งหมด
+            หรือตัวอักษรพิมพ์ใหญ่ทั้งหมด หรือมีทั้งตัวอักษรพิมพ์ใหญ่และพิมพ์เล็กผสมกันอยู่
+            <button onclick="no4()">click</button> <label id=4></label>
+
+        </div>
+        <div>
+            5.จงคำนวณความยาวของด้านตรงข้ามมุมฉาก เมื่อระบุความยาวของด้านประกอบมุมฉากทั้งสองด้านมาให้
+            <button onclick="no5()">click</button> <label id=5></label>
+
+        </div>
         <script>
             //1. รับ input เป็นตัวเลขจำนวนเต็ม a และ b จากนั้นให้ output ผลรวมของตัวเลขทั้ง 2 จำนวนออกทางจอภาพ
             $('label').hide();
-            function show(){
+            function show() {
                 $('label').show()
-              }
+            }
             function no1() {
 
                 let a = parseInt(prompt())
@@ -53,25 +72,44 @@
                 let a = parseInt(prompt('คะแนนเก็บของนักเรียน'))
                 let b = parseInt(prompt('คะแนนสอบกลางภาคของนักเรียน'))
                 let c = parseInt(prompt('คะแนนสอบปลายภาคของนักเรียน'))
-                const i=a+b+c
+                const i = a + b + c
 
-               let x = (i>=80) ? "4.00" : (i>=75) ? "3.5" :(i>=70) ? "3.0" : i>=65 ? "2.5" :
-                (i>=60) ? '2.0' : i>=55 ?'1.5' : '1.0'    
+                let x = (i >= 80) ? "4.00" : (i >= 75) ? "3.5" : (i >= 70) ? "3.0" : i >= 65 ? "2.5" :
+                    (i >= 60) ? '2.0' : i >= 55 ? '1.5' : '1.0'
                 $('#2').html(x)
                 show()
-              console.log(x)
+                console.log(x)
 
 
             }
             function no3() {
+                let arr = [5, 1, 2, 3, 4, 5]
+                arr.sort()
+                let i = arr[0]
+                arr.reverse()
+                let x = arr[0]
+                $('#3').html('max is :' + i + 'minis' + x)
+                show()
 
 
             }
             function no4() {
+                character = prompt()
+                let a = (character == character.toUpperCase())
+                    ? alert('All Capital Letter')
+                    : (character == character.toLowerCase())
+                        ? alert('All Small Letter') : alert('MIX');
 
 
             }
             function no5() {
+                let a = parseInt(prompt())
+                let b = parseInt(prompt())
+                let i = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+                console.log(i)
+
+                $('#5').html(i )
+                show()
 
 
             }
@@ -80,7 +118,9 @@
 
             }
             function no7() {
+          s= x1+x2  / 2 
 
+          x2 = 11 + -15  /2
 
             }
             function no8() {

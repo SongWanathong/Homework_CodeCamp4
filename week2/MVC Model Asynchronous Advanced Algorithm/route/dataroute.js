@@ -4,7 +4,7 @@ var router = express.Router()
 
 router.get('/getdata', dataController.getData)
 router.post('/:key/:value', dataController.addData)
-router.patch('/:key/:value', dataController.updateData)
+router.put('/:key/:value/:id', dataController.updateData)
 router.delete('/:key', dataController.removeData)
 
 module.exports = router

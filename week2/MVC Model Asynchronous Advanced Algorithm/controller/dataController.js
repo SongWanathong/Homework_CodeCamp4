@@ -21,32 +21,45 @@ module.exports.getData =  async function getUser(req, res) {
 	    }
 	  }
 
-module.exports.addData = function(req, res) {
+module.exports.addData =async function(req, res) {
 	const { key, value } = req.params
 	
-	dataModel.set(key, value)
-	res.status(200).send('Success')
+	await axios.post('https://reqres.in/api/users', {
+		firstName: key,
+		lastName: value
+	  })
+	  .then(function (response) {
+		console.log(response.data);
+	  })
+	  .catch(function (error) {
+		console.log(error);
+	  });
 }
 
-module.exports.updateData = function(req, res) {
-	const { key, value } = req.params
+module.exports.updateData =async function(req, res) {
+	const { key, value,id } = req.params
 	
-	if (dataModel.has(key)) {
-		dataModel.set(key, value)
-		res.status(200).send('Success')
-	} else {
-		res.status(404).send(key + ' is not found')
-	}
+	await axios.put(`https://reqres.in/api/users/${id}`, {
+		firstName: key,
+		lastName: value
+	  })
+	  .then(function (response) {
+		console.log(response);
+	  })
+	  .catch(function (error) {
+		console.log(error);
+	  });
 }
 
-module.exports.removeData = function(req, res) {
+module.exports.removeData =async function(req, res) {
 	const { key } = req.params
 	
-	if (dataModel.has(key)) {
-		dataModel.delete(key)
-		res.status(200).send('Success')
-	} else {
-		res.status(404).send(key + ' is not found')
-	}
+	await axios.delete(`https://reqres.in/api/users/${key}`)
+	  .then(function (response) {
+		console.log(response);
+	  })
+	  .catch(function (error) {
+		console.log(error);
+	  });
 }
 

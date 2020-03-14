@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Popup from './App';
 import Todo from './todo';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 

@@ -11,8 +11,7 @@ render() {
 
                     </div>
                     <div className="card-body">
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                    {this.props.children}
                     </div>
                     <div className="card-footer text-muted">
                         <a href="#" className="btn btn-light">Go somewhere</a>

@@ -7,7 +7,7 @@ function Todo(props) {
    
     return (
         <div className = {styles.Root}>
-            <span  className = {styles.Tick} style = {{backgroundColor : ticked ? '#B6D7A8':undefined}} onClick={ontick}></span>
+            <span  className = {styles.Tick}  style = {{backgroundColor : ticked ? '#B6D7A8':undefined}} onClick={ontick}></span>
             <div className = {styles.Text}  style={{textDecoration:ticked ? 'line-through' : undefined }}  >{name}</div>
             <span className = {styles.Delete} onClick={ondDelete}>X</span>
             

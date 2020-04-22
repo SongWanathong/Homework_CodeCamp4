@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var array = [0,9,1,8,2,7,3,6,4,5];
+        for (var i = 0; i < array.length; i++) {
+            var target = array[i];
+            for (var j = i - 1; j >= 0 && (array[j] > target); j--) {
+                array[j + 1] = array[j];
+            }
+            array[j + 1] = target
+        }
+        console.log(array);
+    </script>
+</body>
+
+</html>

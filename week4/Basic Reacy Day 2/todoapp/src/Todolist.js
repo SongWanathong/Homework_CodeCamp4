@@ -37,35 +37,51 @@ class Todolist extends React.Component {
   }
 
   handleonadd = (e) => { 
-    console.log(this.state.textValue); 
      if (!this.state.textValue ){
+       console.log(!this.state.textValue)
        alert('please input!!')
        return
      }
+     console.log(this.state.textValue)
     this.setState( 
      state =>  ({todos :state.todos.concat({name:this.state.textValue.trim(),ticket: false})}),
      ()=>{this.setState({ textValue: ''})}
      )
   }
   
+   componentDidMount = () => {
+      // alert('did did mout')
 
+   }
+   componentDidUpdate = () => {
+    // alert('did did update')
+
+  }
+  componentWillUnmount = () => {
+    // alert('unmout')
+
+  }
+  
 
   render = () => {
+    
     return (
       <div className={style.Root}>
         <Newtodo
           value={this.state.textValue}
           onAdd={this.handleonadd}
           onValue={this.handleonValue}
-          value={this.state.textValue} />
+          />
   
-        {this.state.todos.map((todos, idx) => (<Todo
+        {this.state.todos.map((todos, idx) => (
+        <Todo
           key={idx}
           ticked={todos.ticket}
          
           name={todos.name}
           ontick={this.handleTick(idx)}
-          ondDelete={this.handleDelete(idx)} />
+          ondDelete={this.handleDelete(idx)} 
+          />
         ))}
       </div>
     )
